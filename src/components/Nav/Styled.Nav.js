@@ -5,7 +5,6 @@ const S = {};
 S.Nav = styled.div`
   height: 80px;
   border-bottom: 1px solid #d9d9d9;
-  margin-bottom: 30px;
 `;
 
 S.NavContainer = styled.div`
@@ -18,9 +17,11 @@ S.NavContainer = styled.div`
 `;
 
 S.NavTitle = styled.span`
-  display: inline-block;
+  display: flex;
+  height: 28px;
   font-size: 25px;
-  font-weight: 800;
+  font-weight: 500;
+  font-family: 'One-Mobile-Pop';
   color: ${({ theme }) => theme.logogreen};
 `;
 

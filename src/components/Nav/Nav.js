@@ -12,7 +12,10 @@ const Nav = () => {
   return (
     <S.Nav>
       <S.NavContainer>
-        <S.NavTitle>🌱싱그러운 우리</S.NavTitle>
+        <S.NavTitle>
+          <img src="/images/SesacSesac.jpg" alt="logo" />
+          <div>싱그러운 우리</div>
+        </S.NavTitle>
         <S.NavInputBox>
           <S.NavInputTitle>검색:</S.NavInputTitle>
           <S.NavInput />

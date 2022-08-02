@@ -40,20 +40,25 @@ const Login = () => {
   return (
     <S.loginWrap>
       <S.Container>
-        <S.GreetingContainer>
-          <S.MainIcon>🌱</S.MainIcon>
-          <S.Greeting>
-            {code ? '로그인 완료 ✅' : 'Welcome to 싱그러운 우리!'}
-          </S.Greeting>
-        </S.GreetingContainer>
-        <S.LoginIcons>
-          <i className="fab fa-facebook" />
-          <i className="fab fa-instagram" />
-          <i className="fab fa-twitter-square" />
-        </S.LoginIcons>
-        <S.LoginBtn onClick={code ? goToMain : goToKakaoLogin}>
-          {code ? '메인 화면으로' : '카카오로 시작하기'}
-        </S.LoginBtn>
+        <div>
+          <S.GreetingContainer>
+            <S.MainIcon>
+              <img src="/images/SesacSesac.jpg" alt="logo" />
+            </S.MainIcon>
+            <S.Greeting>
+              {code ? '로그인 완료 ✅' : 'Welcome to 싱그러운 우리!'}
+            </S.Greeting>
+          </S.GreetingContainer>
+          <S.LoginIcons>
+            <i className="fab fa-facebook" />
+            <i className="fab fa-instagram" />
+            <i className="fab fa-twitter-square" />
+          </S.LoginIcons>
+          <S.LoginBtn onClick={code ? goToMain : goToKakaoLogin}>
+            <img src="/images/kakao.png" alt="kakao logo" />
+            <div>{code ? '메인 화면으로' : '카카오톡으로 로그인'}</div>
+          </S.LoginBtn>
+        </div>
       </S.Container>
     </S.loginWrap>
   );

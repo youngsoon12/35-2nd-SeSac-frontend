@@ -17,7 +17,7 @@ S.Container = styled.div`
   width: 500px;
   height: 500px;
   text-align: center;
-  border: 1px solid ${({ theme }) => theme.lightGrey};
+  border: 1px solid ${({ theme }) => theme.lightGray};
 `;
 
 S.GreetingContainer = styled.div`

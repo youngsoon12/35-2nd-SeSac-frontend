@@ -6,6 +6,7 @@ const Nav = () => {
   const isTokenVaild = localStorage.getItem('jwt');
 
   const preventPosting = e => {
+    alert('로그인을 해주세요!');
     e.preventDefault();
   };
 

@@ -5,7 +5,6 @@ const S = {};
 S.Nav = styled.div`
   height: 80px;
   border-bottom: 1px solid #d9d9d9;
-  margin-bottom: 30px;
 `;
 
 S.NavContainer = styled.div`

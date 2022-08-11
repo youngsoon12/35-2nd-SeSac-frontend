@@ -1,0 +1,39 @@
+{
+  "result": {
+    "user_id": 1,
+    "post_id": 15,
+    "written_user_id": 3,
+    "written_user_name": "최고",
+    "written_user_profile_image_url": "https://images.unsplash.com/photo-1599113615507-13f78150fb2e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODB8fGhhcHB5fGVufDB8fDB8fA%3D%3D&auto=format&",
+    "created_at": "2022-08-09T13:48:38.273",
+    "address": "경북 경주시 강동면 오금큰길 332-6",
+    "latitude": "127.05365424893311",
+    "longitude": "37.50633698993257",
+    "title": "울산 식물카페, 성은이의 풀숲",
+    "images": [
+      {
+        "id": 43,
+        "url": "https://velog.velcdn.com/images/tiger/post/5543c02e-9875-4fc0-a51f-24f7fb2f2706/image.jpg"
+      },
+      {
+        "id": 44,
+        "url": "https://velog.velcdn.com/images/tiger/post/5543c02e-9875-4fc0-a51f-24f7fb2f2706/image.jpg"
+      },
+      {
+        "id": 45,
+        "url": "https://velog.velcdn.com/images/tiger/post/5543c02e-9875-4fc0-a51f-24f7fb2f2706/image.jpg"
+      }
+    ],
+    "content": "할수있다",
+    "hashtags": [
+      {
+        "id": 5,
+        "name": "숲"
+      },
+      {
+        "id": 6,
+        "name": "산"
+      }
+    ]
+  }
+}

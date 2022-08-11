@@ -14,10 +14,10 @@ const Router = () => {
       <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/list" element={<List />} />
+        <Route path="/posts" element={<List />} />
         <Route path="/post" element={<Post />} />
-        <Route path="/detail" element={<Detail />} />
         <Route path="/kakaoLogin" element={<Login />} />
+        <Route path="/posts/:id" element={<Detail />} />
       </Routes>
       <Footer />
     </BrowserRouter>

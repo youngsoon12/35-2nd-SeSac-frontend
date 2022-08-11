@@ -255,9 +255,9 @@ const Detail = () => {
         </S.PostOptionButton>
         {user_id === written_user_id && (
           <>
-            <S.PostOptionButton onClick={() => navigate(`/post/posting/1`)}>
+            {/* <S.PostOptionButton onClick={() => navigate(`/post/posting/1`)}>
               수정
-            </S.PostOptionButton>
+            </S.PostOptionButton> */}
             <S.PostOptionButton onClick={() => deletePost()}>
               삭제
             </S.PostOptionButton>

@@ -6,6 +6,7 @@ import List from './pages/List/List';
 import Post from './pages/Post/Post';
 import Detail from './pages/Detail/Detail';
 import Login from './pages/Login/Login';
+import Footer from './components/Footer/Footer';
 
 const Router = () => {
   return (
@@ -18,6 +19,7 @@ const Router = () => {
         <Route path="/detail" element={<Detail />} />
         <Route path="/kakaoLogin" element={<Login />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };

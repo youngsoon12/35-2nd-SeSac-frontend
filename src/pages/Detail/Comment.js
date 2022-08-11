@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import S from './Styled.Detail';
+import { API } from '../../components/Config/Config';
 
 const Comment = ({
   id,
@@ -33,7 +34,7 @@ const Comment = ({
       return;
     }
 
-    fetch(`http://10.58.0.223:8000/posts/${params.id}/comments`, {
+    fetch(`${API}/posts/${params.id}/comments`, {
       method: 'POST',
       headers: {
         Authorization: TOKEN,
@@ -61,7 +62,7 @@ const Comment = ({
     const confirmDelete = window.confirm('댓글을 삭제하시겠습니까?');
 
     if (confirmDelete) {
-      fetch(`http://10.58.0.223:8000/posts/${params.id}/comments/${id}`, {
+      fetch(`${API}/posts/${params.id}/comments/${id}`, {
         method: 'DELETE',
         headers: {
           Authorization: TOKEN,
@@ -91,7 +92,7 @@ const Comment = ({
   };
 
   const updateComment = () => {
-    fetch(`http://10.58.0.223:8000/posts/${params.id}/comments/${id}`, {
+    fetch(`${API}/posts/${params.id}/comments/${id}`, {
       method: 'PATCH',
       headers: {
         Authorization: TOKEN,

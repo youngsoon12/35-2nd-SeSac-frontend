@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { API } from '../../components/Config/Config';
 import S from './Styled.Login';
 
 const Login = () => {
@@ -14,7 +14,7 @@ const Login = () => {
 
   useEffect(() => {
     if (code) {
-      fetch(`http://10.58.0.223:8000/users/login?code=${code}`, {
+      fetch(`${API}/users/login?code=${code}`, {
         method: 'GET',
       })
         .then(res => res.json())

@@ -2,11 +2,11 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import Comment from './Comment';
 import S from './Styled.Detail';
+import { API } from '../../components/Config/Config';
 
 const { kakao } = window;
 const LIMIT = 5;
-const TOKEN =
-  'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NH0._-qz0NvEY59h3tVCumLxAjBbwXbazIAa4PW0J6fsIpc';
+const TOKEN = localStorage.getItem('jwt');
 
 const Detail = () => {
   const [post, setPost] = useState({});
@@ -19,7 +19,7 @@ const Detail = () => {
 
   //Post GET
   const getPostData = () => {
-    fetch(`http://10.58.0.223:8000/posts/${params.id}`, {
+    fetch(`${API}/posts/${params.id}`, {
       headers: {
         Authorization: TOKEN,
       },
@@ -48,7 +48,7 @@ const Detail = () => {
   //Comments GET
   const getCommentsData = () => {
     fetch(
-      `http://10.58.0.223:8000/posts/${params.id}/comments?limit=${LIMIT}&offset=${currCommentOffset}`,
+      `${API}/posts/${params.id}/comments?limit=${LIMIT}&offset=${currCommentOffset}`,
       {
         headers: {
           Authorization: TOKEN,
@@ -70,7 +70,7 @@ const Detail = () => {
 
   useEffect(() => {
     fetch(
-      `http://10.58.0.223:8000/posts/${params.id}/comments?limit=${LIMIT}&offset=${currCommentOffset}`,
+      `${API}/posts/${params.id}/comments?limit=${LIMIT}&offset=${currCommentOffset}`,
       {
         headers: {
           Authorization: TOKEN,
@@ -110,7 +110,7 @@ const Detail = () => {
       return;
     }
 
-    fetch(`http://10.58.0.223:8000/posts/${params.id}/comments`, {
+    fetch(`${API}/posts/${params.id}/comments`, {
       method: 'POST',
       headers: {
         Authorization: TOKEN,
@@ -201,21 +201,20 @@ const Detail = () => {
     const confirmDelete = window.confirm('게시글을 삭제하시겠습니까?');
 
     if (confirmDelete) {
-      fetch(`http://10.58.0.223/posts/${params.id}`, {
+      fetch(`${API}/posts/${params.id}`, {
         method: 'DELETE',
         headers: {
           Authorization: TOKEN,
         },
-      })
-        .then(res => res.json())
-        .then(res => {
-          if (res.message === 'SUCCESS') {
-            navigate('/posts');
-          } else {
-            alert('다시 시도해 주세요');
-          }
-        });
-    } else return;
+      }).then(res => {
+        if (res.ok) {
+          navigate('/posts');
+          alert('글이 삭제되었습니다!ㄴ');
+        } else {
+          alert('다시 시도해 주세요');
+        }
+      });
+    }
   };
 
   const date = created_at?.split('T')[0].replaceAll('-', '.');

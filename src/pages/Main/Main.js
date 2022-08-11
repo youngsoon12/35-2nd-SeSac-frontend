@@ -8,7 +8,7 @@ const Main = () => {
   const navigate = useNavigate();
 
   const goToList = () => {
-    navigate('/list');
+    navigate('/posts');
   };
 
   return (

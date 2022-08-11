@@ -15,7 +15,7 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/posts" element={<List />} />
-        <Route path="/post" element={<Post />} />
+        <Route path="/post/posting" element={<Post />} />
         <Route path="/kakaoLogin" element={<Login />} />
         <Route path="/posts/:id" element={<Detail />} />
       </Routes>

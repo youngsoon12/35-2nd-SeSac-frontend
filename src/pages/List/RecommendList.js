@@ -6,6 +6,8 @@ import S from './Styled.RecommendList';
 function RecommendList({ recommendPostList }) {
   const navigate = useNavigate();
 
+  console.log(recommendPostList);
+
   return recommendPostList.map(info => {
     return (
       <S.RecommendType key={info.id} onClick={() => navigate(`posts/`)}>

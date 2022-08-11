@@ -6,7 +6,7 @@ import S from './Styeld.StoryList';
 const StoryList = ({ item }) => {
   const navigate = useNavigate();
   return (
-    <S.StoryBox onClick={() => navigate(`posts/${item.id}`)}>
+    <S.StoryBox onClick={() => navigate(`/posts/${item.id}`)}>
       <S.StoryTitle>{item.title}</S.StoryTitle>
       <S.LocationIcon>
         <i className="fa-solid fa-location-dot" />
@@ -18,8 +18,8 @@ const StoryList = ({ item }) => {
         })}
       </S.HashTag>
       <S.Image src={item.images[0].url} alt="" />
-      <S.Image2 src={item.images[1].url} alt="" />
-      <S.Image3 src={item.images[2].url} alt="" />
+      {/* <S.Image2 src={item.images[1].url} alt="" />
+      <S.Image3 src={item.images[2].url} alt="" /> */}
     </S.StoryBox>
   );
 };

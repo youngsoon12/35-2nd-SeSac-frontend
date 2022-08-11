@@ -8,13 +8,13 @@ const Footer = () => {
         <S.FooterContactB>제휴문의 : wecode35@gmail.business</S.FooterContactB>
       </S.FooterContact>
       <S.FooterNav>
-        <S.FooterNavItem>공지사항 ></S.FooterNavItem>
-        <S.FooterNavItem>브랜드 스토리 ></S.FooterNavItem>
-        <S.FooterNavItem>기인정보처리방침 ></S.FooterNavItem>
-        <S.FooterNavItem>서비스 이용약관 ></S.FooterNavItem>
-        <S.FooterNavItem>고객상담 ></S.FooterNavItem>
-        <S.FooterNavItem>판매자 신청 ></S.FooterNavItem>
-        <S.FooterNavItem>사업자 구매회원 신청 ></S.FooterNavItem>
+        <S.FooterNavItem>공지사항 </S.FooterNavItem>
+        <S.FooterNavItem>브랜드 스토리 </S.FooterNavItem>
+        <S.FooterNavItem>기인정보처리방침 </S.FooterNavItem>
+        <S.FooterNavItem>서비스 이용약관 </S.FooterNavItem>
+        <S.FooterNavItem>고객상담 </S.FooterNavItem>
+        <S.FooterNavItem>판매자 신청 </S.FooterNavItem>
+        <S.FooterNavItem>사업자 구매회원 신청 </S.FooterNavItem>
       </S.FooterNav>
       <S.FooterInfo>
         <S.FooterLeaderInfo>

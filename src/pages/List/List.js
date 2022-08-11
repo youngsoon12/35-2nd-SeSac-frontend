@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import RecommendList from './RecommendList';
 import StoryList from './StoryList';
 import S from './Styled.List';
 import CATEGORY_LIST from './CategoryList.js';
 import KakaoMap from './KakaoMap';
+import { API } from '../../components/Config/Config';
 
 const List = () => {
   const [items, setItems] = useState([]);
@@ -29,14 +29,14 @@ const List = () => {
     setOffSet(offSet + 8);
   };
   useEffect(() => {
-    fetch(`http://10.58.0.223:8000/posts?title_or_hashtag=&city=&categories=
+    fetch(`${API}/posts?title_or_hashtag=&city=&categories=
     `)
       .then(res => res.json())
       .then(result => {
         setItems(result);
       });
     fetch(
-      `http://10.58.0.223:8000/posts?title_or_hashtag=${title_or_hashtag}&city=${city}&categories=${categories}&offset=${8}`
+      `${API}/posts?title_or_hashtag=${title_or_hashtag}&city=${city}&categories=${categories}&offset=${8}`
     )
       .then(res => res.json())
       .then(result => {
@@ -47,13 +47,14 @@ const List = () => {
   const getItem = e => {
     e.preventDefault();
     fetch(
-      `http://10.58.0.223:8000/posts?title_or_hashtag=${title_or_hashtag}&city=${city}&categories=${categories}&offset=0`
+      `${API}/posts?title_or_hashtag=${title_or_hashtag}&city=${city}&categories=${categories}&offset=0`
     )
       .then(res => res.json())
       .then(result => {
         setItems(result);
       });
   };
+
   const moreItem = e => {
     e.preventDefault();
     const getMoreItem = () => {
@@ -63,7 +64,7 @@ const List = () => {
     };
 
     fetch(
-      `http://10.58.0.223:8000/posts?title_or_hashtag=${title_or_hashtag}&city=${city}&categories=${categories}&offset=${
+      `${API}/posts?title_or_hashtag=${title_or_hashtag}&city=${city}&categories=${categories}&offset=${
         16 + offSet
       }`
     )
@@ -149,7 +150,7 @@ const List = () => {
                   <S.SearchButton onClick={getItem}>검색</S.SearchButton>
                   <S.ResetButton>초기화</S.ResetButton>
                 </S.Button>
-                <S.WriteButton onClick={() => navigate(`posts/`)}>
+                <S.WriteButton onClick={() => navigate(`/post/posting`)}>
                   <S.WriteLeft>나의 싱그러운 라이프를 소개하세요</S.WriteLeft>
                   <S.WriteRight>신청하기</S.WriteRight>
                 </S.WriteButton>

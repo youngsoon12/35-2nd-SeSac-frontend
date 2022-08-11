@@ -11,6 +11,7 @@ const Nav = () => {
 
   const deleteToken = () => {
     localStorage.removeItem('jwt');
+    alert('로그아웃 되었습니다!');
     navigation('/');
   };
 
@@ -45,7 +46,7 @@ const Nav = () => {
             onClick={
               isTokenVaild
                 ? () => {
-                    navigation('/post');
+                    navigation('/post/posting');
                   }
                 : preventPosting
             }

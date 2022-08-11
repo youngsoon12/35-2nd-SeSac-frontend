@@ -5,6 +5,7 @@ import DaumPostcode from 'react-daum-postcode';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import S from './Styled.Post';
+import { API } from '../../components/Config/Config';
 
 const Post = () => {
   const navigation = useNavigate();
@@ -80,12 +81,10 @@ const Post = () => {
     formData.append('longitude', user.y);
     formData.append('title', user.title);
     formData.append('content', user.content);
-    axios
-      .post('http://10.58.0.223:8000/posts/posting', formData, config)
-      .then(response => {
-        console.log(response);
-        navigation('/list');
-      });
+    axios.post(`${API}/posts/posting`, formData, config).then(response => {
+      console.log(response);
+      navigation('/posts');
+    });
   };
 
   let geocoder = new kakao.maps.services.Geocoder();

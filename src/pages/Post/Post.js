@@ -5,7 +5,10 @@ import DaumPostcode from 'react-daum-postcode';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import S from './Styled.Post';
+<<<<<<< HEAD
 import { API } from '../../components/Config/Config';
+=======
+>>>>>>> 39d8c308ce84363ac9beb66428ab0e3c447810cd
 
 const Post = () => {
   const navigation = useNavigate();

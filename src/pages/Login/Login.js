@@ -30,7 +30,7 @@ const Login = () => {
           }
         });
     }
-  }, [isToken]);
+  }, [code, isToken]);
 
   const goToKakaoLogin = () => {
     window.location.href = authLink;

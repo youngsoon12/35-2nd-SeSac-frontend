@@ -12,14 +12,16 @@ const StoryList = ({ item }) => {
         <i className="fa-solid fa-location-dot" />
       </S.LocationIcon>
       <S.Location>{item.address}</S.Location>
+      <S.ImageBox>
+        {item.images.map(data => {
+          return <S.Image key={data.id} src={data.url} alt="" />;
+        })}
+      </S.ImageBox>
       <S.HashTag>
         {item.hashtags.map(i => {
           return <span key={i.id}>#{i.name}</span>;
         })}
       </S.HashTag>
-      <S.Image src={item.images[0].url} alt="" />
-      {/* <S.Image2 src={item.images[1].url} alt="" />
-      <S.Image3 src={item.images[2].url} alt="" /> */}
     </S.StoryBox>
   );
 };

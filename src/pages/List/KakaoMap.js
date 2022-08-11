@@ -16,7 +16,7 @@ const KakaoMap = ({ data }) => {
     let map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
     // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다
-    if (Result.length === 3) {
+    if (Result.length >= 3) {
       let positions = [
         {
           content: Result[0].title,

@@ -42,10 +42,14 @@ S.HashTag = styled.div`
   color: grey;
 `;
 
+S.ImageBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+`;
+
 S.Image = styled.img`
-  position: absolute;
-  top: 130px;
-  left: 40px;
+  margin-top: 120px;
   width: 150px;
   height: 100px;
   border-radius: 4px;

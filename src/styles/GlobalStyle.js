@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Spoqa Han Sans', 'Sans-serif';
   }
+  
   body {
     font-family: 'Spoqa Han Sans', 'Sans-serif';
   }
@@ -22,6 +23,5 @@ const GlobalStyle = createGlobalStyle`
     font-weight: normal;
     font-style: normal;
   }
-
 `;
 export default GlobalStyle;

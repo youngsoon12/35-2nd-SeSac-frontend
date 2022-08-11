@@ -53,6 +53,8 @@ const List = () => {
       .then(result => {
         setItems(result);
       });
+
+    setResult([]);
   };
 
   const moreItem = e => {
@@ -75,7 +77,6 @@ const List = () => {
         getMoreItem();
       });
   };
-
   const handleInput = e => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
@@ -90,10 +91,9 @@ const List = () => {
       });
     }
   };
-
   return (
     <div>
-      {Object.keys(items).length !== 0 && (
+      {items.length !== 0 && (
         <S.Inner>
           <S.Wrapper>
             <S.Header>
@@ -163,9 +163,9 @@ const List = () => {
               {lists.map(item => (
                 <StoryList key={item.id} item={item} />
               ))}
-              {result.map(item => (
-                <StoryList key={item.id} item={item} />
-              ))}
+              {totalPost >= lists.length &&
+                result.length !== 0 &&
+                result.map(item => <StoryList key={item.id} item={item} />)}
             </S.StoryWrapper>
             <S.LoadButton onClick={moreItem}>더 보기</S.LoadButton>
             <S.Vacant />

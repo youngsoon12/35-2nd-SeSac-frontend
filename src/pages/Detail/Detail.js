@@ -2,11 +2,19 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import Comment from './Comment';
 import S from './Styled.Detail';
+<<<<<<< HEAD
 import { API } from '../../components/Config/Config';
 
 const { kakao } = window;
 const LIMIT = 5;
 const TOKEN = localStorage.getItem('jwt');
+=======
+
+const { kakao } = window;
+const LIMIT = 5;
+const TOKEN =
+  'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NH0._-qz0NvEY59h3tVCumLxAjBbwXbazIAa4PW0J6fsIpc';
+>>>>>>> 39d8c308ce84363ac9beb66428ab0e3c447810cd
 
 const Detail = () => {
   const [post, setPost] = useState({});
@@ -19,7 +27,11 @@ const Detail = () => {
 
   //Post GET
   const getPostData = () => {
+<<<<<<< HEAD
     fetch(`${API}/posts/${params.id}`, {
+=======
+    fetch(`http://10.58.0.223:8000/posts/${params.id}`, {
+>>>>>>> 39d8c308ce84363ac9beb66428ab0e3c447810cd
       headers: {
         Authorization: TOKEN,
       },
@@ -48,7 +60,11 @@ const Detail = () => {
   //Comments GET
   const getCommentsData = () => {
     fetch(
+<<<<<<< HEAD
       `${API}/posts/${params.id}/comments?limit=${LIMIT}&offset=${currCommentOffset}`,
+=======
+      `http://10.58.0.223:8000/posts/${params.id}/comments?limit=${LIMIT}&offset=${currCommentOffset}`,
+>>>>>>> 39d8c308ce84363ac9beb66428ab0e3c447810cd
       {
         headers: {
           Authorization: TOKEN,
@@ -70,7 +86,11 @@ const Detail = () => {
 
   useEffect(() => {
     fetch(
+<<<<<<< HEAD
       `${API}/posts/${params.id}/comments?limit=${LIMIT}&offset=${currCommentOffset}`,
+=======
+      `http://10.58.0.223:8000/posts/${params.id}/comments?limit=${LIMIT}&offset=${currCommentOffset}`,
+>>>>>>> 39d8c308ce84363ac9beb66428ab0e3c447810cd
       {
         headers: {
           Authorization: TOKEN,
@@ -110,7 +130,11 @@ const Detail = () => {
       return;
     }
 
+<<<<<<< HEAD
     fetch(`${API}/posts/${params.id}/comments`, {
+=======
+    fetch(`http://10.58.0.223:8000/posts/${params.id}/comments`, {
+>>>>>>> 39d8c308ce84363ac9beb66428ab0e3c447810cd
       method: 'POST',
       headers: {
         Authorization: TOKEN,
@@ -201,11 +225,16 @@ const Detail = () => {
     const confirmDelete = window.confirm('게시글을 삭제하시겠습니까?');
 
     if (confirmDelete) {
+<<<<<<< HEAD
       fetch(`${API}/posts/${params.id}`, {
+=======
+      fetch(`http://10.58.0.223/posts/${params.id}`, {
+>>>>>>> 39d8c308ce84363ac9beb66428ab0e3c447810cd
         method: 'DELETE',
         headers: {
           Authorization: TOKEN,
         },
+<<<<<<< HEAD
       }).then(res => {
         if (res.ok) {
           navigate('/posts');
@@ -215,6 +244,18 @@ const Detail = () => {
         }
       });
     }
+=======
+      })
+        .then(res => res.json())
+        .then(res => {
+          if (res.message === 'SUCCESS') {
+            navigate('/posts');
+          } else {
+            alert('다시 시도해 주세요');
+          }
+        });
+    } else return;
+>>>>>>> 39d8c308ce84363ac9beb66428ab0e3c447810cd
   };
 
   const date = created_at?.split('T')[0].replaceAll('-', '.');

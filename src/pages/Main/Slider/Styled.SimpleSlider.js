@@ -8,10 +8,12 @@ S.SliderWrap = styled.div`
   width: 83%;
 
   .slick-prev {
+    top: 55%;
     left: -40px;
   }
 
   .slick-next {
+    top: 55%;
     right: -30px;
   }
 

@@ -8,7 +8,7 @@ S.MainBtn = styled.div`
   background-color: #027002;
   border-radius: 20px;
   color: white;
-  margin: 0 auto;
+  margin: 0 auto 70px;
   text-align: center;
   padding: 30px;
   font-size: 20px;

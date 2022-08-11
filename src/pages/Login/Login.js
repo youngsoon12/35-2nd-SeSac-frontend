@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import S from './Styled.Login';
 
 const Login = () => {
   const navigate = useNavigate();
-
+  const [isToken, setIsToken] = useState(false);
+  const isTokenVaild = localStorage.getItem('jwt');
   const params = new URL(document.URL).searchParams;
   const code = params.get('code');
 
@@ -13,21 +14,23 @@ const Login = () => {
 
   useEffect(() => {
     if (code) {
-      fetch(`http://10.58.4.114:8000/users/login?code=${code}`, {
+      fetch(`http://10.58.0.223:8000/users/login?code=${code}`, {
         method: 'GET',
       })
         .then(res => res.json())
         .then(data => {
           if (data.access_token) {
-            alert('환영합니다!');
             localStorage.setItem('jwt', data.access_token);
-            navigate('/');
+            localStorage.setItem('message', data.message);
+            setIsToken(!isToken);
+            alert('환영합니다!');
+            // navigate('/');
           } else {
             alert('다시 시도해주세요!');
           }
         });
     }
-  }, [code, navigate]);
+  }, [code, isToken]);
 
   const goToKakaoLogin = () => {
     window.location.href = authLink;
@@ -43,10 +46,10 @@ const Login = () => {
         <div>
           <S.GreetingContainer>
             <S.MainIcon>
-              <img src="/images/SesacSesac.jpg" alt="logo" />
+              <img src="/images/loginImg/SesacSesac.jpg" alt="logo" />
             </S.MainIcon>
             <S.Greeting>
-              {code ? '로그인 완료 ✅' : 'Welcome to 싱그러운 우리!'}
+              {isTokenVaild ? '로그인 완료 ✅' : 'Welcome to 싱그러운 우리!'}
             </S.Greeting>
           </S.GreetingContainer>
           <S.LoginIcons>
@@ -54,9 +57,9 @@ const Login = () => {
             <i className="fab fa-instagram" />
             <i className="fab fa-twitter-square" />
           </S.LoginIcons>
-          <S.LoginBtn onClick={code ? goToMain : goToKakaoLogin}>
-            <img src="/images/kakao.png" alt="kakao logo" />
-            <div>{code ? '메인 화면으로' : '카카오톡으로 로그인'}</div>
+          <S.LoginBtn onClick={isTokenVaild ? goToMain : goToKakaoLogin}>
+            <img src="/images/loginImg/kakao.png" alt="kakao logo" />
+            <div>{isTokenVaild ? '메인 화면으로' : '카카오톡으로 로그인'}</div>
           </S.LoginBtn>
         </div>
       </S.Container>

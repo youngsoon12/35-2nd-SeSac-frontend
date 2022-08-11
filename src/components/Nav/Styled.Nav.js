@@ -5,6 +5,7 @@ const S = {};
 S.Nav = styled.div`
   height: 80px;
   border-bottom: 1px solid #d9d9d9;
+  margin-bottom: 30px;
 `;
 
 S.NavContainer = styled.div`
@@ -23,6 +24,7 @@ S.NavTitle = styled.span`
   font-weight: 500;
   font-family: 'One-Mobile-Pop';
   color: ${({ theme }) => theme.logogreen};
+  cursor: pointer;
 `;
 
 S.NavInputBox = styled.div`
@@ -42,11 +44,17 @@ S.NavInput = styled.input`
   outline: none;
   border: none;
   width: 80%;
-  padding: 10px;
   border-bottom: 1px solid ${({ theme }) => theme.lightGray};
   &:focus {
     border-bottom: 1px solid ${({ theme }) => theme.logogreen};
   }
+`;
+
+S.NavRight = styled.div`
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 S.NavLogin = styled.span`
@@ -56,6 +64,13 @@ S.NavLogin = styled.span`
   border-radius: 15px;
   color: ${({ theme }) => theme.white};
   font-size: 15px;
+  cursor: pointer;
+`;
+
+S.NavPostIcon = styled.img`
+  width: 40px;
+  height: 40px;
+  color: ${({ theme }) => theme.lightGray};
   cursor: pointer;
 `;
 

@@ -7,6 +7,8 @@ function RecommendList({ recommendPostList }) {
   const navigate = useNavigate();
 
   return recommendPostList.map(info => {
+    console.log(info);
+
     return (
       <S.RecommendType
         key={info.id}

@@ -7,6 +7,8 @@ import axios from 'axios';
 import S from './Styled.Post';
 import { API } from '../../components/Config/Config';
 
+const TOKEN = localStorage.getItem('jwt');
+
 const Post = () => {
   const navigation = useNavigate();
   const [imgPreview, setImgPreview] = useState([]);
@@ -66,8 +68,7 @@ const Post = () => {
     const config = {
       headers: {
         'Content-Type': 'multipart/form-data',
-        AUTHORIZATION:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.cpKX0K9ExYMe19a8Dnkc_ShHYcK44uzKuuUYoEuUihA',
+        AUTHORIZATION: TOKEN,
       },
     };
 

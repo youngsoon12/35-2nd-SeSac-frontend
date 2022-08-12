@@ -67,7 +67,7 @@ const List = () => {
 
     fetch(
       `${API}/posts?title_or_hashtag=${title_or_hashtag}&city=${city}&categories=${categories}&offset=${
-        16 + offSet
+        4 + offSet
       }`
     )
       .then(res => res.json())
@@ -91,89 +91,103 @@ const List = () => {
       });
     }
   };
-  return (
-    <div>
-      {items.length !== 0 && (
-        <S.Inner>
-          <S.Wrapper>
-            <S.Header>
-              <S.HeaderTitle>새싹 여행</S.HeaderTitle>
-              <S.HeaderSubTitle>
-                새싹과 관련된 지역별 추천장소를 소개합니다
-              </S.HeaderSubTitle>
-            </S.Header>
-            <S.RightSide>
-              <S.RightWrapper>
-                <S.LeftSide>
-                  <KakaoMap data={data} />
-                </S.LeftSide>
-                <S.RightTitle>추천 장소</S.RightTitle>
-                <S.RecommendPlace>
-                  <RecommendList recommendPostList={recommendPostList} />
-                </S.RecommendPlace>
-                <S.SearchContainer>
-                  <S.Region name="city" onChange={handleInput}>
-                    <option value="">도시</option>
-                    {COUNTY.map(item => (
-                      <option key={item.id} value={item.county}>
-                        {item.county}
-                      </option>
-                    ))}
-                  </S.Region>
-                  <S.SearchBox
-                    type="search"
-                    name="title_or_hashtag"
-                    id="search-form"
-                    placeholder="장소명 혹은 해시태그를 검색하세요"
-                    onChange={handleInput}
-                  />
-                </S.SearchContainer>
-                <S.CheckBox>
-                  {CATEGORY_LIST.map(item => {
-                    return (
-                      <S.CheckBoxTo key={item.id}>
-                        <S.CheckBoxType
-                          onChange={e => {
-                            onCheckedElement(e.target.checked, e.target.value);
-                          }}
-                          type="checkbox"
-                          value={item.data}
-                          name="categories"
-                          checked={categories.includes(item.data)}
-                        />
-                        {item.data}
-                      </S.CheckBoxTo>
-                    );
-                  })}
-                </S.CheckBox>
-                <S.Button>
-                  <S.SearchButton onClick={getItem}>검색</S.SearchButton>
-                  <S.ResetButton>초기화</S.ResetButton>
-                </S.Button>
-                <S.WriteButton onClick={() => navigate(`/post/posting`)}>
-                  <S.WriteLeft>나의 싱그러운 라이프를 소개하세요</S.WriteLeft>
-                  <S.WriteRight>신청하기</S.WriteRight>
-                </S.WriteButton>
-              </S.RightWrapper>
-            </S.RightSide>
-            <S.ListTitle>
-              LIST <span style={{ color: 'green' }}>{totalPost}</span>
-            </S.ListTitle>
-            <S.StoryWrapper>
-              {lists.map(item => (
-                <StoryList key={item.id} item={item} />
-              ))}
-              {totalPost >= lists.length &&
-                result.length !== 0 &&
-                result.map(item => <StoryList key={item.id} item={item} />)}
-            </S.StoryWrapper>
-            <S.LoadButton onClick={moreItem}>더 보기</S.LoadButton>
-            <S.Vacant />
-          </S.Wrapper>
-        </S.Inner>
-      )}
-    </div>
-  );
+
+  const isData = items.length !== 0;
+
+  if (!isData) {
+    return (
+      <S.Loading>
+        <img src="/images/Loading.jpg" alt="빠져든다" />
+        <div>Loading 되고 있습니당</div>
+      </S.Loading>
+    );
+  } else
+    return (
+      <div>
+        {items.length !== 0 && (
+          <S.Inner>
+            <S.Wrapper>
+              <S.Header>
+                <S.HeaderTitle>새싹 여행</S.HeaderTitle>
+                <S.HeaderSubTitle>
+                  새싹과 관련된 지역별 추천장소를 소개합니다
+                </S.HeaderSubTitle>
+              </S.Header>
+              <S.RightSide>
+                <S.RightWrapper>
+                  <S.LeftSide>
+                    <KakaoMap data={data} />
+                  </S.LeftSide>
+                  <S.RightTitle>추천 장소</S.RightTitle>
+                  <S.RecommendPlace>
+                    <RecommendList recommendPostList={recommendPostList} />
+                  </S.RecommendPlace>
+                  <S.SearchContainer>
+                    <S.Region name="city" onChange={handleInput}>
+                      <option value="">도시</option>
+                      {COUNTY.map(item => (
+                        <option key={item.id} value={item.county}>
+                          {item.county}
+                        </option>
+                      ))}
+                    </S.Region>
+                    <S.SearchBox
+                      type="search"
+                      name="title_or_hashtag"
+                      id="search-form"
+                      placeholder="장소명 혹은 해시태그를 검색하세요"
+                      onChange={handleInput}
+                    />
+                  </S.SearchContainer>
+                  <S.CheckBox>
+                    {CATEGORY_LIST.map(item => {
+                      return (
+                        <S.CheckBoxTo key={item.id}>
+                          <S.CheckBoxType
+                            onChange={e => {
+                              onCheckedElement(
+                                e.target.checked,
+                                e.target.value
+                              );
+                            }}
+                            type="checkbox"
+                            value={item.data}
+                            name="categories"
+                            checked={categories.includes(item.data)}
+                          />
+                          {item.data}
+                        </S.CheckBoxTo>
+                      );
+                    })}
+                  </S.CheckBox>
+                  <S.Button>
+                    <S.SearchButton onClick={getItem}>검색</S.SearchButton>
+                    <S.ResetButton>초기화</S.ResetButton>
+                  </S.Button>
+                  <S.WriteButton onClick={() => navigate(`/post/posting`)}>
+                    <S.WriteLeft>나의 싱그러운 라이프를 소개하세요</S.WriteLeft>
+                    <S.WriteRight>신청하기</S.WriteRight>
+                  </S.WriteButton>
+                </S.RightWrapper>
+              </S.RightSide>
+              <S.ListTitle>
+                LIST <span style={{ color: 'green' }}>{totalPost}</span>
+              </S.ListTitle>
+              <S.StoryWrapper>
+                {lists.map(item => (
+                  <StoryList key={item.id} item={item} />
+                ))}
+                {totalPost >= lists.length &&
+                  result.length !== 0 &&
+                  result.map(item => <StoryList key={item.id} item={item} />)}
+              </S.StoryWrapper>
+              <S.LoadButton onClick={moreItem}>더 보기</S.LoadButton>
+              <S.Vacant />
+            </S.Wrapper>
+          </S.Inner>
+        )}
+      </div>
+    );
 };
 export default List;
 

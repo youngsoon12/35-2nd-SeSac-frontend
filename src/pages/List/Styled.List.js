@@ -2,6 +2,25 @@ import styled from 'styled-components';
 
 const S = {};
 
+S.Loading = styled.div`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  font-family: 'ONE-Mobile-POP';
+  font-size: 70px;
+
+  img {
+    width: 50%;
+    height: 50%;
+    border-radius: 30px;
+    border: 1px solid black;
+    box-shadow: 10px 10px green;
+  }
+`;
+
 S.Inner = styled.div`
   margin-top: 100px;
   display: flex;

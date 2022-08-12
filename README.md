@@ -1,8 +1,13 @@
 
-<h1>팀 명 : 싱그러운 우리 (SeSAC)</h1>
+<h1>싱그러운 우리 (SeSAC)🌱</h1>
 
-팀 원: 김영수, 박성은, 손민지, 이금관
 
+<h2>개발 인원 및 기간</h2>
+
+- 개발기간 : 2022/8/1 ~ 2022/8/12 (10일)
+- 개발 인원 : FE 4명, BE 2명
+  - Front-end : 김영수, 박성은, 손민지, 이금관
+  - Back-end : 김동규, 박서윤
 
 <h2>프로젝트 소개</h2>
 
@@ -12,52 +17,27 @@
 
 개발은 초기 세팅부터 모두 직접 구현하였으며, 다양한 라이브러리와 API를 최대한 활용하는 방안으로 진행하였습니다.
 
-<h2>개발 인원 및 기간</h2>
-
-개발기간 : 2022/8/1 ~ 2022/8/12
-
-개발 인원 : 프론트엔드 4명, 백엔드 2명
-
-Front : 김영수, 박성은, 손민지, 이금관
-
-Back : 심동규, 박서윤
-
 <h2>사용기술 스택</h2>
 
  - Front-end: <img src="https://img.shields.io/badge/html5-E34F26?style=flat-square&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=Sass&logoColor=white"/> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat-square&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/react-61DAFB?style=flat-square&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/ReactRouter-CA4245?style=flat-square&logo=ReactRouter&logoColor=white"/>
-
 - Back-end: <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/> <img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=Django&logoColor=white"/> <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white"/>
 
 
-
-
 <h2>협업 툴</h2>
-* Trello
-* Notion
-* Github
+
+- Trello
+- Notion
+- Github
 
 <h2>구현 목표</h2>
 
-메인 페이지 (라이브러리를 이용한 슬라이더 구현)
-
-소셜 로그인 (카카오 로그인 api)을 이용한 로그인 페이지
-
-게시글목록 페이지
-
-게시글목록 페이지 내 필터기능
-
-개별 게시글 상세 페이지
-
-게시글 댓글,대댓글 기능
-
-글쓰기 페이지 (여러개의 사진을 formdata를 이용하여 보내는것)
-
-<h2>🌟구현 페이지</h2>
-- Main
-- List
-- Post
-- Detail
-- Login
+- 메인 페이지 (React-Slick 라이브러리를 이용한 슬라이더 구현)
+- 소셜 로그인 (카카오 REST API)을 이용한 로그인 페이지
+- 게시글목록 페이지
+- 게시글목록 페이지 내 검색 및 필터링 기능
+- 개별 게시글 상세 페이지
+- 게시글 댓글, 대댓글 기능 생성, 수정 및 삭제 기능
+- 글쓰기 페이지 (여러개의 사진을 Form Data를 이용하여 보내기)
 
 <h2>시연영상</h2>
 

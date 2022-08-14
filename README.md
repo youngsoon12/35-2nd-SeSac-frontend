@@ -66,9 +66,10 @@
 
 ### 글쓰기 페이지
 : 게시글 내용 작성 페이지
-- Form Data를 활용한 게시글 작성 기능 구현
+- Form Data를 처리방식을 이용하여 Json타입의 문자열뿐만이 아닌 File 타입의 파일도 전송 구현
 - Drop Zone 라이브러리를 이용해 drag n drop으로 사진 첨부 기능 구현
-- S3를 이용한 이미지 파일 첨부 기능 구현
+- 카카오 우편번호 API를 이용하여 주소 값 추출 구현
+- 카카오 지도 API Service를 이용하여 위에서 구한 주소 값을 토대로 위도야 경도를 구하여 백엔드에게 전송   
 ![2022-08-12_10:36:13_video 6](https://user-images.githubusercontent.com/104430030/184286796-d27b30a6-fa53-435b-adb5-8118400a72ef.GIF)
 ![2022-08-12_10:36:13_video 7](https://user-images.githubusercontent.com/104430030/184286846-0a524f00-b19d-41e9-949c-28c496a108b0.GIF)
 
